@@ -34,7 +34,7 @@ server_socket.listen(5)
 
 while True :
     clientsocket, addr = server_socket.accept()
-    print("Accepted connection from %", addr)
+    print("Accepted connection from ", addr)
     while True :
         raw_req = clientsocket.recv(1024)
         req = raw_req.decode('ascii').split(' ')
@@ -43,4 +43,5 @@ while True :
         if(handle == 1) :
             break
 server_socket.close()
-exit(0)
+print("Exiting.....")
+exit()
